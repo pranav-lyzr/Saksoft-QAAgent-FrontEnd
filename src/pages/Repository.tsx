@@ -6,7 +6,7 @@ import Card from '../components/Card';
 import Loader from '../components/Loader';
 import EmptyState from '../components/EmptyState';
 import { toast } from 'sonner';
-import { Github, ArrowLeft, Trash } from 'lucide-react';
+import { Github, ArrowLeft } from 'lucide-react';
 
 const Repository = () => {
   const { projectId } = useParams<{ projectId: string }>();
@@ -159,13 +159,13 @@ const Repository = () => {
                       {repo.replace('https://github.com/', '')}
                     </a>
                   </div>
-                  <button 
+                  {/* <button 
                     className="text-gray-400 hover:text-red-500 p-1 rounded-full hover:bg-red-50 transition-colors"
                     title="Remove repository"
                     onClick={() => toast.info('Repository removal will be available in a future update')}
                   >
                     <Trash className="h-4 w-4" />
-                  </button>
+                  </button> */}
                 </Card>
               ))}
             </div>
