@@ -24,7 +24,7 @@ const Index = () => {
     }
     
     setLoading(false);
-  }, []);
+  }, [setCurrentProject, navigate]);
 
   if (loading) {
     return (
@@ -34,7 +34,15 @@ const Index = () => {
     );
   }
 
-  return <CreateProject />;
+  return (
+    <div>
+      {currentProject ? (
+        <h1>Welcome back to {currentProject.name}!</h1>
+      ) : (
+        <CreateProject />
+      )}
+    </div>
+  );
 };
 
 export default Index;
